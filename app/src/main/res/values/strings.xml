@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">L\'application de l\'ambiance</string>
+    <string name="title_home">Bienvenue sur ma première application, Android c\'est vraiment pas terrible !</string>
+    <string name="title_dashboard">Accueil</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_seconde">Seconde Activité</string>
+    <string name="title_activity_bound">BoundActivity</string>
+</resources>
