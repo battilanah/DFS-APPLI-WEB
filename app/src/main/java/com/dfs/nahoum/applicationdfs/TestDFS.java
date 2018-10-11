@@ -1,6 +1,7 @@
 package com.dfs.nahoum.applicationdfs;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -91,6 +92,19 @@ public class TestDFS extends AppCompatActivity {
                 Intent TestIntentActivity1 = new Intent(getApplicationContext(), TestIntentActivity1.class);
                 TestIntentActivity1.putExtra("1", "Coucou");
                 startActivityForResult(TestIntentActivity1, 100);
+            }
+        });
+
+
+        Button btnintentdata = (Button)findViewById(R.id.testintentdata);
+
+        btnintentdata.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                i.setAction(Intent.ACTION_VIEW);
+                i.setData(Uri.parse("tel:123"));
+                startActivity(i);
             }
         });
 
