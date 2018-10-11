@@ -1,9 +1,9 @@
 package com.dfs.nahoum.applicationdfs;
 
-import android.app.LauncherActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -62,9 +62,52 @@ public class TestDFS extends AppCompatActivity {
             }
         });
 
+        Button btnbroadcast = (Button)findViewById(R.id.boutonmainbroadcast);
+
+        btnbroadcast.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent broadcastactivity = new Intent(getApplicationContext(), BroadcastActivity.class);
+                startActivity(broadcastactivity);
+            }
+        });
+
+
+        Button btncontact = (Button)findViewById(R.id.boutoncontact);
+
+        btncontact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent contactactivity = new Intent(getApplicationContext(), ContentAdapter.class);
+                startActivity(contactactivity);
+            }
+        });
+
+        Button btnintenttest1 = (Button)findViewById(R.id.testintent1);
+
+        btnintenttest1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent TestIntentActivity1 = new Intent(getApplicationContext(), TestIntentActivity1.class);
+                TestIntentActivity1.putExtra("1", "Coucou");
+                startActivityForResult(TestIntentActivity1, 100);
+            }
+        });
+
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 100){
+            TextView textview1 = (TextView)findViewById(R.id.textintent1);
+            textview1.setText(data.getExtras().getString("1"));
+        }
+
+
     }
 
     @Override

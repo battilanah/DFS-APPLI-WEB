@@ -5,4 +5,7 @@
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_seconde">Seconde Activité</string>
     <string name="title_activity_bound">BoundActivity</string>
+    <string name="title_activity_broadcast">BroadcastActivity</string>
+    <string name="title_activity_content_adapter">ContentAdapter</string>
+    <string name="title_activity_test_intent_activite2">TestIntentActivite2</string>
 </resources>
